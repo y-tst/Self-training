@@ -1,4 +1,4 @@
-public class inchToMeter {
+public class InchToMeter {
 
     public static void main(String[] args) {
         int currentInch = 1;
