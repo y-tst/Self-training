@@ -35,6 +35,7 @@ public class CapsToLowCase {
                 System.out.println("CAPS - " + output);
                 System.out.println("Try again. Exit - '.'");
             }
+            else System.out.println("You've inputted " + input);
         }
     }
 }
