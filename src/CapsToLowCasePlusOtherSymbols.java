@@ -16,7 +16,6 @@ public class CapsToLowCasePlusOtherSymbols {
             }
             while (ignore != '\n');
 
-
             if (input == '.') {
                 System.out.println("You've pressed '.', process is finished");
                 System.out.println("You've inputted " + count + " letters, for which the register was changed");
