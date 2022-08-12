@@ -21,27 +21,40 @@ package interviewTasks.stringWithUniqSymbols;
 
 public class UniqSymbolsInTheString {
 
-    private String line1 = "abcdef";   // -> true
-    private String line2 = "1234567";  // -> true
-    private String line3 = "abcABC";   // -> true
-    private String line4 = "abcadef";  // -> false
+    static String line1 = "abcdef";   // -> true
+    static String line2 = "1234567";  // -> true
+    static String line3 = "abcABC";   // -> true
+    static String line4 = "abcadef";  // -> false
 
     public static void main(String[] args) {
 
+        System.out.println(AreSymbolsInTheStringUnique(line1));
+        System.out.println(AreSymbolsInTheStringUnique(line2));
+        System.out.println(AreSymbolsInTheStringUnique(line3));
+        System.out.println(AreSymbolsInTheStringUnique(line4));
     }
 
 
-    public static boolean uniqSymbolsInTheString(String examingString) {
+    public static boolean AreSymbolsInTheStringUnique(String examiningString) {
 
-
-        char[] charsArray = new char[examingString.length()];
-        for (int i = 0; i < examingString.length(); i++) {
-            charsArray[i] = examingString.charAt(i);
-
-
+        char[] transformedToChar = stringToCharArray(examiningString);
+        for (int i = 0; i < transformedToChar.length - 1; i++) {
+            for (int k = i + 1; k <= transformedToChar.length - 1; k++) {
+                if (transformedToChar[i] == transformedToChar[k])
+                    return false;
+            }
         }
         return true;
+    }
 
+    public static char[] stringToCharArray(String charArrayCandidate) {
+
+        char[] charsArray = new char[charArrayCandidate.length()];          //char[] charsArray = charArrayCandidate.toCharArray();
+        for (int i = 0; i < charArrayCandidate.length(); i++) {
+            charsArray[i] = charArrayCandidate.charAt(i);
+        }
+
+        return charsArray;
     }
 
 }
