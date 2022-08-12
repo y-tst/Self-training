@@ -1,4 +1,4 @@
-package Debugging;
+package debugging;
 
 public class ReverseSorting {
 

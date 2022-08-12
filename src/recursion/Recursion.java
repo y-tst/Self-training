@@ -13,4 +13,5 @@ public class Recursion {
         System.out.println("Factorial of 5 equals " + f.fact(5));
 
     }
+
 }
