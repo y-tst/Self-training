@@ -19,6 +19,9 @@ package interviewTasks.stringWithUniqSymbols;
 //        for (char c : ch) {
 //            System.out.println(c);
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class UniqSymbolsInTheString {
 
     static String line1 = "abcdef";   // -> true
@@ -32,9 +35,27 @@ public class UniqSymbolsInTheString {
         System.out.println(AreSymbolsInTheStringUnique(line2));
         System.out.println(AreSymbolsInTheStringUnique(line3));
         System.out.println(AreSymbolsInTheStringUnique(line4));
+        System.out.println();
+
+        System.out.println(isUniq(line1));
+        System.out.println(isUniq(line2));
+        System.out.println(isUniq(line3));
+        System.out.println(isUniq(line4));
+        System.out.println();
+
+        System.out.println(isUniqV2(line1));
+        System.out.println(isUniqV2(line2));
+        System.out.println(isUniqV2(line3));
+        System.out.println(isUniqV2(line4));
+        System.out.println();
+
+        System.out.println(isUniqV3(line1));
+        System.out.println(isUniqV3(line2));
+        System.out.println(isUniqV3(line3));
+        System.out.println(isUniqV3(line4));
     }
 
-
+    // 1st vriant:
     public static boolean AreSymbolsInTheStringUnique(String examiningString) {
 
         char[] transformedToChar = stringToCharArray(examiningString);
@@ -47,6 +68,7 @@ public class UniqSymbolsInTheString {
         return true;
     }
 
+
     public static char[] stringToCharArray(String charArrayCandidate) {
 
         char[] charsArray = new char[charArrayCandidate.length()];          //char[] charsArray = charArrayCandidate.toCharArray();
@@ -55,6 +77,50 @@ public class UniqSymbolsInTheString {
         }
 
         return charsArray;
+    }
+
+
+    // 2nd variant:
+    public static boolean isUniq(String testString) {
+
+        for (int i = 0; i < testString.length(); i++) {
+            final char SYMBOL = testString.charAt(i);
+
+            if (testString.lastIndexOf(SYMBOL) != i) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    //3rd variant:
+    public static boolean isUniqV2(String testString) {
+
+        final Set<Character> testedString = new HashSet<Character>();
+
+        for (int i = 0; i < testString.length(); i++) {
+            final char SYMBOL = testString.charAt(i);
+
+            if (testedString.contains(SYMBOL))
+                return false;
+
+            testedString.add(SYMBOL);
+        }
+        return true;
+    }
+
+    //4th variant:
+    public static boolean isUniqV3(String testString) {
+
+        // this way:
+//        List<Character> characterList = testString.chars().mapToObj(e -> (char)e).collect(Collectors.toList());
+//        Set<Character> characterSet = new HashSet<Character>(characterList);
+
+        // or this way:
+        Set<Character> characterSet = new HashSet<>();
+        testString.chars().forEach(e -> characterSet.add((char) e));
+
+        return testString.length() == characterSet.size();
     }
 
 }
