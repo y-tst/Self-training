@@ -1,4 +1,4 @@
-package interviewTasks.TransformStringHvingNoDuplications;
+package interviewTasks.transformStringHvingNoDuplications;
 
 //(removeDupes('abcd')) // -> 'abcd'
 //(removeDupes('aabbccdd')) // -> 'abcd'
@@ -6,9 +6,7 @@ package interviewTasks.TransformStringHvingNoDuplications;
 //(removeDupes('abababcdcdcd')) // -> 'abcd'
 
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
