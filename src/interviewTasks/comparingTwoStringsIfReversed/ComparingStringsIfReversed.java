@@ -23,6 +23,12 @@ public class ComparingStringsIfReversed {
         System.out.println(isRrotated("javascript", "java"));
         System.out.println(isRrotated("test", "java"));
 
+        System.out.println();
+
+        System.out.println(isRrotatedV2("javascript", "scriptjava"));
+        System.out.println(isRrotatedV2("javascript", "iptjavascr"));
+        System.out.println(isRrotatedV2("javascript", "java"));
+        System.out.println(isRrotatedV2("test", "java"));
     }
 
     public static boolean isReversed(String firstString, String secondString) {
@@ -61,5 +67,12 @@ public class ComparingStringsIfReversed {
             }
         }
         return false;
+    }
+
+    // var 2
+
+    public static boolean isRrotatedV2(String firstString, String secondString) {
+
+        return (firstString + firstString).contains(secondString) && (firstString.length() == secondString.length());
     }
 }
