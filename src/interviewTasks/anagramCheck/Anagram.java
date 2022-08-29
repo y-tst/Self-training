@@ -11,9 +11,16 @@ public class Anagram {
 
     public static void main(String[] args) {
 
-        System.out.println(checkIfElementsAreAnagramms(new String[]{"abcd", "bdac", "cabd"}));
-        System.out.println(checkIfElementsAreAnagramms(new String[]{"aabcdd", "bdaaac", "cabddd"}));
-        System.out.println(checkIfElementsAreAnagramms(new String[]{"abcd", "bdXc", "cabd"}));
+//        System.out.println(checkIfElementsAreAnagramms(new String[]{"abcd", "bdac", "cabd"}));
+//        System.out.println(checkIfElementsAreAnagramms(new String[]{"aabcdd", "bdaaac", "cabddd"}));
+//        System.out.println(checkIfElementsAreAnagramms(new String[]{"abcd", "bdXc", "cabd"}));
+
+        System.out.println();
+
+        System.out.println(checkIfElementsAreAnagrammsV2(new String[]{"abcd", "bdac", "cabd"}));
+        System.out.println(checkIfElementsAreAnagrammsV2(new String[]{"aabcdd", "bdaaac", "cabddd"}));
+        System.out.println(checkIfElementsAreAnagrammsV2(new String[]{"abcd", "bdXc", "cabd"}));
+
     }
 
     public static boolean checkIfElementsAreAnagramms(String[] testArrayOfStrings) {
@@ -35,6 +42,22 @@ public class Anagram {
         return true;
     }
 
+    //    var2 using sorting
+    public static boolean checkIfElementsAreAnagrammsV2(String[] testArrayOfStrings) {
+
+        for (int i = 0; i < testArrayOfStrings.length - 1; i++) {
+            if (testArrayOfStrings[i].length() != testArrayOfStrings[i + 1].length())
+                return false;
+
+            List<Character> charList1 =  convertStringToCharList(testArrayOfStrings[i]).stream().sorted().collect(Collectors.toList());
+            List<Character> charList2 =  convertStringToCharList(testArrayOfStrings[i + 1]).stream().sorted().collect(Collectors.toList());
+
+            if (charList1.equals(charList2)) return true;
+            else return false;
+        }
+        return true;
+    }
+
     public static List<Character>
     convertStringToCharList(String str) {
         List<Character> chars = str
@@ -43,7 +66,4 @@ public class Anagram {
                 .collect(Collectors.toList());
         return chars;
     }
-
-//    var2 using sorting
-
 }
