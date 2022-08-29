@@ -59,9 +59,8 @@ public class Anagram {
             List<Character> charList1 = convertStringToCharList(testArrayOfStrings[i]).stream().sorted().collect(Collectors.toList());
             List<Character> charList2 = convertStringToCharList(testArrayOfStrings[i + 1]).stream().sorted().collect(Collectors.toList());
 
-            if (charList1.equals(charList2))
-                return true;
-            else return false;
+            if (!charList1.equals(charList2))
+                return false;
         }
         return true;
     }
@@ -79,19 +78,16 @@ public class Anagram {
             Collections.sort(charList1);
             Collections.sort(charList2);
 
-            if (charList1.equals(charList2))
-                return true;
-            else return false;
+            if (!charList1.equals(charList2))
+                return false;
         }
         return true;
     }
 
     public static List<Character>
     convertStringToCharList(String str) {
-        List<Character> chars = str
-                .chars()
+        return str.chars()
                 .mapToObj(e -> (char) e)
                 .collect(Collectors.toList());
-        return chars;
     }
 }
