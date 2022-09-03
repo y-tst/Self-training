@@ -1,10 +1,8 @@
-package interviewTasks.flattenArrayFromFewArrays;
+package interview_tasks.flatten_array_from_few_arrays;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class FlattenArray {
 

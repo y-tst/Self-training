@@ -1,4 +1,4 @@
-package interviewTasks.anagramCheck;
+package interview_tasks.anagram_check;
 
 import java.util.Collections;
 import java.util.List;

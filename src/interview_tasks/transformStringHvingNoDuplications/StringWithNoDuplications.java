@@ -1,4 +1,4 @@
-package interviewTasks.transformStringHvingNoDuplications;
+package interview_tasks.transformStringHvingNoDuplications;
 
 //(removeDupes('abcd')) // -> 'abcd'
 //(removeDupes('aabbccdd')) // -> 'abcd'

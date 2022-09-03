@@ -1,4 +1,4 @@
-package interviewTasks.mostFequentStringInArray;
+package interview_tasks.most_fequent_stringIn_array;
 
 import java.util.HashMap;
 import java.util.Map;

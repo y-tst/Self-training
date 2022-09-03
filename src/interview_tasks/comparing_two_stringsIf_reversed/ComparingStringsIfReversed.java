@@ -1,4 +1,4 @@
-package interviewTasks.comparingTwoStringsIfReversed;
+package interview_tasks.comparing_two_stringsIf_reversed;
 
 import java.util.ArrayList;
 

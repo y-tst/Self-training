@@ -1,4 +1,4 @@
-package interviewTasks.stringWithUniqSymbols;
+package interview_tasks.stringWithUniqSymbols;
 
 
 //        // Custom input string
@@ -20,7 +20,6 @@ package interviewTasks.stringWithUniqSymbols;
 //            System.out.println(c);
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class UniqSymbolsInTheString {
 
