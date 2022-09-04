@@ -19,7 +19,7 @@ public class ComparingArraysItems {
         System.out.println(isFirstArrayIncludesItemsFromSecondArray(new int[]{2, 1, 1, 3}, new int[]{5}));
   }
 
-    public  static  boolean isFirstArrayIncludesItemsFromSecondArray(int[] arr1, int[] arr2){
+    public static boolean isFirstArrayIncludesItemsFromSecondArray(int[] arr1, int[] arr2){
 
         if (arr1.length < arr2.length)
             return  false;

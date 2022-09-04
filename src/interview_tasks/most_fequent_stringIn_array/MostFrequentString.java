@@ -38,15 +38,15 @@ public class MostFrequentString {
         String mostFrequentString = new String();
         int maxQuantity = 0;
 
-        Map<String, Integer> workingMap = new HashMap<String, Integer>();
+        Map<String, Integer> workingMap = new HashMap<>();
 
-        for (int i = 0; i < inputString.length; i++) {
-            if (workingMap.containsKey(inputString[i])) {
-                workingMap.put(inputString[i], workingMap.get(inputString[i]) + 1);
+        for (String s : inputString) {
+            if (workingMap.containsKey(s)) {
+                workingMap.put(s, workingMap.get(s) + 1);
 //                mostFrequentString = inputString[i];
 //                maxQuantity = workingMap.get(inputString[i]) + 1;
             } else {
-                workingMap.put(inputString[i], 1);
+                workingMap.put(s, 1);
             }
         }
 
