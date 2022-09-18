@@ -6,9 +6,15 @@ public class FibonacciGenerator {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(fibonacci(10)));
+        System.out.println(Arrays.toString(fibonacci(0)));
     }
 
     public static int[] fibonacci(int n) {
+
+        if (n <= 0) {
+            return new int[]{-1};
+        }
+
         int[] fiboArray = new int[n];
 
         Arrays.fill(fiboArray, 1);
