@@ -5,12 +5,13 @@ import java.util.Arrays;
 public class FibonacciRecursionPlusMemoization {
 
     public static void main(String[] args) {
-        int n = 100;
+        int n = 20;
         long[] mem = new long[n + 1];
 
         Arrays.fill(mem, -1);
 
         System.out.println(fibNaive(n, mem));
+        System.out.println(Arrays.toString(mem));
     }
 
     private static long fibNaive(int n, long[] mem) {
