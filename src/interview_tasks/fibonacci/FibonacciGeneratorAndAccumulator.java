@@ -37,7 +37,7 @@ public class FibonacciGeneratorAndAccumulator {
 
         if (n <= 0) {
             System.out.println("Unavailable value");
-            return new ArrayList<Integer>();
+            return new ArrayList<>();
         } else if (1 <= n && n <= 2) {
             return fiboList.subList(0, n);
         } else if (2 < n && n <= fiboList.size()) {
