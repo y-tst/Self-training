@@ -1,4 +1,4 @@
-package leet_code_practice;
+package leet_code_practice.longiest_substring_length;
 
 public class LongestSubstringLength {
 

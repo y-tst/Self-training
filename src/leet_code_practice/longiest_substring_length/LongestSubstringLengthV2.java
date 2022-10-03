@@ -1,4 +1,4 @@
-package leet_code_practice;
+package leet_code_practice.longiest_substring_length;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,6 +8,7 @@ public class LongestSubstringLengthV2 {
     public static void main(String[] args) {
 
         // Longest Substring Length with unique chars
+        // Sliding window Algorithm
 
         String testString = "abcabrttteabcdgt";
 
