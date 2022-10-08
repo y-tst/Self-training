@@ -1,4 +1,4 @@
-package leet_code_practice.longiest_substring_length.roman_to_integer;
+package leet_code_practice.roman_to_integer;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -66,7 +66,6 @@ public class RomanToInteger {
                 .mapToObj(e -> (char) e)
                 .collect(Collectors.toList()));
 
-
         for (int i = roman.size() - 1; i >= 0; i--) {
 
             char romanChar = roman.get(i);
@@ -115,12 +114,9 @@ public class RomanToInteger {
 
             if (romanChar == 'I') {
                 result += 1;
-
             }
         }
 
         return result;
     }
-
-
 }
