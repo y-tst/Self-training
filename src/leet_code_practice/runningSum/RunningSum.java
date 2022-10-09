@@ -29,13 +29,12 @@ import java.util.Arrays;
 public class RunningSum {
 
     public static void main(String[] args) {
-        System.out.println("Running Sum for [3,1,2,10,1] is: " + Arrays.toString(runningSum(new int[]{3,1,2,10,1})));
-
+        System.out.println("Running Sum for [3,1,2,10,1] is: " + Arrays.toString(runningSum(new int[]{3, 1, 2, 10, 1})));
     }
 
-    static  public int[] runningSum(int[] nums) {
+    static public int[] runningSum(int[] nums) {
 
-        int [] sumArray = new int[nums.length];
+        int[] sumArray = new int[nums.length];
         int currentNum = 0;
 
         for (int i = 0; i < nums.length; i++) {
