@@ -48,7 +48,7 @@ import java.util.Arrays;
 public class FindPivotIndex {
 
     public static void main(String[] args) {
-        System.out.println("Pivot index for [1,7,3,6,5,6] is: " + pivotIndex(new int[]{-1,-1,0,0,-1,-1}));
+        System.out.println("Pivot index for [1,7,3,6,5,6] is: " + pivotIndex(new int[]{1, 7, 3, 6, 5, 6}));
     }
 
     static public int pivotIndex(int[] nums) {
