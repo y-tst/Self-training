@@ -42,25 +42,29 @@ public class IsIsomorphic {
         List<Integer> repeated1 = new LinkedList<>();
         List<Integer> repeated2 = new LinkedList<>();
 
-        if (s.length() == t.length()
-                && s.chars()
+        int setLength1 = s.chars()
                 .mapToObj(e -> (char)e)
                 .collect(Collectors.toSet())
-                .size()
-                == t.chars()
+                .size();
+
+        int setLength2 = t.chars()
                 .mapToObj(e -> (char)e)
                 .collect(Collectors.toSet())
-                .size()) {
+                .size();
+
+        if (s.length() == t.length() && setLength1 == setLength2) {
 
             for (int i = 0; i < s.length(); i++) {
+                char currentChar1 = s.toCharArray()[i];
+                char currentChar2 = t.toCharArray()[i];
 
-                if (uniqueChars1.contains(s.toCharArray()[i])) {
+                if (uniqueChars1.contains(currentChar1)) {
                     repeated1.add(i);
-                } else uniqueChars1.add(s.toCharArray()[i]);
+                } else uniqueChars1.add(currentChar1);
 
-                if (uniqueChars2.contains(t.toCharArray()[i]) && uniqueChars1.indexOf(s.toCharArray()[i]) == uniqueChars2.indexOf(t.toCharArray()[i])) {
+                if (uniqueChars2.contains(currentChar2) && uniqueChars1.indexOf(s.toCharArray()[i]) == uniqueChars2.indexOf(t.toCharArray()[i])) {
                     repeated2.add(i);
-                } else uniqueChars2.add(t.toCharArray()[i]);
+                } else uniqueChars2.add(currentChar2);
             }
 
             if (uniqueChars1.size() == uniqueChars2.size() && repeated1.equals(repeated2)) {
