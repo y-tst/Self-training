@@ -55,7 +55,7 @@ public class IsIsomorphicV2 {
     }
 
     public static void main(String[] args) {
-        System.out.println("Strings 'paper' and  'title' are isomorphic - it is " + isIsomorphic("title", "title"));
+        System.out.println("Strings 'paper' and  'title' are isomorphic - it is " + isIsomorphic("paper", "title"));
     }
 }
 
