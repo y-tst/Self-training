@@ -19,8 +19,9 @@ public class MaxDistanseByFuel {
             int nextStop = currentStop;
 
             while (nextStop < stationPoints.length - 1 &&
-                    stationPoints[nextStop + 1] - stationPoints[currentStop] <= capacity)
+                    stationPoints[nextStop + 1] - stationPoints[currentStop] <= capacity) {
                 nextStop++;
+            }
 
             if (currentStop == nextStop)
                 return -1;

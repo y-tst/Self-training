@@ -53,6 +53,7 @@ public class simpleExample {
                         .sorted(String::compareToIgnoreCase)
                         .collect(Collectors.toList());
 
+
         System.out.println(filteredNames);
 
 //        filteredNames.sort(String::compareToIgnoreCase);
