@@ -29,7 +29,7 @@ public class ExactSumV2 {
         System.out.println(Arrays.toString(subArrayOfTwoElemetsThatMakesNeededNumberV2(arr4, k4)));
     }
 
-    // O(n)
+    // Time O(n) Memory O(n)
     public static int[] subArrayOfTwoElemetsThatMakesNeededNumberV2(int[] testArray, int neededNumber) {
         Set<Integer> processing = new HashSet<>();
         for (int i = 0; i < testArray.length; i++) {

@@ -27,7 +27,7 @@ public class ExactSumV1 {
         System.out.println(Arrays.toString(subArrayOfTwoElemetsThatMakesNeededNumber(arr4, k4)));
     }
 
-    // O(n^2)
+    // Time O(n^2) Memory O(1)
     public static int[] subArrayOfTwoElemetsThatMakesNeededNumber(int[] testArray, int neededNumber) {
         for (int i = 0; i < testArray.length - 1; i++) {
             for (int j = 1; j < testArray.length - 1; j++) {
