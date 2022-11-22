@@ -1,10 +1,12 @@
 package interview_tasks.exact_sum_from_two_elements_of_array;
 
 /*
-Return the array of two elements from current array, that makes needed number by sum
+Return the array of two elements from current array, that makes needed number by sum  !!!Array is sorted
  */
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ExactSumV2 {
 
@@ -21,22 +23,23 @@ public class ExactSumV2 {
     static int k4 = 0;           // -> [-2, 2]  (first of two possible solutions)
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(subArrayOfTwoElemetsThatMakesNeededNumber(arr1, k1)));
-        System.out.println(Arrays.toString(subArrayOfTwoElemetsThatMakesNeededNumber(arr2, k2)));
-        System.out.println(Arrays.toString(subArrayOfTwoElemetsThatMakesNeededNumber(arr3, k3)));
-        System.out.println(Arrays.toString(subArrayOfTwoElemetsThatMakesNeededNumber(arr4, k4)));
+        System.out.println(Arrays.toString(subArrayOfTwoElemetsThatMakesNeededNumberV2(arr1, k1)));
+        System.out.println(Arrays.toString(subArrayOfTwoElemetsThatMakesNeededNumberV2(arr2, k2)));
+        System.out.println(Arrays.toString(subArrayOfTwoElemetsThatMakesNeededNumberV2(arr3, k3)));
+        System.out.println(Arrays.toString(subArrayOfTwoElemetsThatMakesNeededNumberV2(arr4, k4)));
     }
 
-    // O(n^2)
-    public static int[] subArrayOfTwoElemetsThatMakesNeededNumber(int[] testArray, int neededNumber) {
-        for (int i = 0; i < testArray.length - 1; i++) {
-            for (int j = 1; j < testArray.length - 1; j++) {
-                if (testArray[i] + testArray[j] == neededNumber) {
-                    return new int[]{testArray[i], testArray[j]};
-                }
-            }
-        }
+    // O(n)
+    public static int[] subArrayOfTwoElemetsThatMakesNeededNumberV2(int[] testArray, int neededNumber) {
+        Set<Integer> processing = new HashSet<>();
+        for (int i = 0; i < testArray.length; i++) {
+            if (processing.contains(neededNumber - testArray[i])) {
+                return new int[]{neededNumber - testArray[i], testArray[i]};
+            } else processing.add(testArray[i]);
 
+
+        }
         return new int[]{};
+
     }
 }

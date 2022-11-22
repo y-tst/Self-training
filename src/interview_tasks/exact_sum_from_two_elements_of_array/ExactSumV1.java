@@ -1,7 +1,7 @@
 package interview_tasks.exact_sum_from_two_elements_of_array;
 
 /*
-Return the array of two elements from current array, that makes needed number by sum
+Return the array of two elements from current array, that makes needed number by sum !!!Array is sorted
  */
 
 import java.util.Arrays;
