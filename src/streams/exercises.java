@@ -1,12 +1,8 @@
 package streams;
 
-import java.sql.SQLOutput;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-import static java.util.Collections.*;
 
 public class exercises {
 
@@ -161,27 +157,45 @@ int[] example2 = list.stream().mapToInt(Integer::intValue).toArray();
 //        Task 5
 // Map<String, Map<String, Integer>> d2 = new HashMap<>(d1);
 //
+
+
 //        Task 6
-//        List<Person> team = Arrays.asList(
-//        new Person("Nikita", 21, Occupation.CEO),
-//        new Person("Ruslan", 22, Occupation.CEO),
-//        new Person("Dyadya Vanya", 60, Occupation.CLEANING_LADY),
-//        new Person("Bob Martin", 46, Occupation.DEVELOPER),
-//        new Person("Fred Brooks", 47, Occupation.DEVELOPER),
-//        new Person("Maks", 21, Occupation.CEO)
-//        );
-//        // task 3 - get all team members per position, except CEO
-//        Map<Occupation, List<Person>> positions = team.stream()
-//// task 1 - get number of CEOs
-//        Long ceo_num = team.stream()
-//// task 2 - get max age in team
-//        Integer max_age = team.stream()
+//        There is a list of persons
+        List<Person> team = Arrays.asList(
+                new Person("Nikita", 21, Occupation.CEO),
+                new Person("Ruslan", 22, Occupation.CEO),
+                new Person("Dyadya Vanya", 60, Occupation.CLEANING_LADY),
+                new Person("Bob Martin", 46, Occupation.DEVELOPER),
+                new Person("Fred Brooks", 47, Occupation.DEVELOPER),
+                new Person("Maks", 21, Occupation.CEO)
+        );
+
+//   task 6.1 - get number of CEOs
+        Long ceo_num = team.stream()
+                .filter(p -> p.occupation.equals(Occupation.CEO))
+                .count();
+        System.out.println("Number of CEOs - " + ceo_num);
+
+//   task 6.2 - get max age in team
+        Optional<Integer> max_age = team.stream()
+                .map(p -> p.age)
+                .max(Integer::compareTo);
+        System.out.println("Max age in team - " + max_age);
+//        System.out.println("Max age in team (w/o Optional) - " + max_age);
+
+//   task 6.3 - get all team members per position, except CEO
+        Map<Occupation, List<Person>> positions = team.stream()
+                .filter(person -> !person.occupation.equals(Occupation.CEO))
+                .collect(Collectors.groupingBy(Person::getOccupation));
+
+        System.out.println(positions);
 
     }
 
     static class Person {
         private final String firstName;
-        private final String lastName;
+        private String lastName;
+        private Occupation occupation;
         private final int age;
 
         public Person(String firstName, String lastName, int age) {
@@ -190,13 +204,41 @@ int[] example2 = list.stream().mapToInt(Integer::intValue).toArray();
             this.age = age;
         }
 
+        public Person(String firstName, int age, Occupation occupation) {
+            this.firstName = firstName;
+            this.age = age;
+            this.occupation = occupation;
+        }
+
         @Override
         public String toString() {
-            return "Firs Name: " + firstName +
+            return "First Name: " + firstName +
                     "  Last Name: " + lastName +
-                    "  Age: " + age;
+                    "  Age: " + age +
+                    "  Occupation: " + occupation;
+        }
+
+        public String getFirstName() {
+            return firstName;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        public Occupation getOccupation() {
+            return occupation;
+        }
+
+        public int getAge() {
+            return age;
         }
     }
 
+    public enum Occupation {
+        CEO,
+        CLEANING_LADY,
+        DEVELOPER
+    }
 
 }
