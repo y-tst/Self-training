@@ -1,5 +1,7 @@
 package streams;
 
+import javafx.collections.transformation.SortedList;
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -190,7 +192,28 @@ int[] example2 = list.stream().mapToInt(Integer::intValue).toArray();
 
         System.out.println(positions);
 
+
+//   task 6.4 - sort all team members per age
+        List<Person> teamSortedByAge = team.stream()
+                .sorted((e1, e2) -> Double.compare(e1.getAge(), e2.getAge()))
+                .collect(Collectors.toList());
+
+        for (Object person :  teamSortedByAge) {
+            System.out.println(person.toString());
+        }
+
+        // v2
+        List<Person> teamSortedByAgeV2 = team.stream()
+                .sorted(Comparator.comparing(Person::getAge))
+                .collect(Collectors.toList());
+
+        for (Object person :  teamSortedByAgeV2) {
+            System.out.println(person.toString());
+        }
+
+
     }
+
 
     static class Person {
         private final String firstName;
