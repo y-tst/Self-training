@@ -4,9 +4,6 @@ import java.util.Random;
 
 public class Quicksort {
 
-    private Random random = new Random();
-    static int[] randomNumbers = new int[10];
-
     public static void main(String[] args) {
 
         Random random = new Random();
