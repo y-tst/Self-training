@@ -2,6 +2,7 @@ package streams;
 
 import javafx.collections.transformation.SortedList;
 
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -198,7 +199,7 @@ int[] example2 = list.stream().mapToInt(Integer::intValue).toArray();
                 .sorted((e1, e2) -> Double.compare(e1.getAge(), e2.getAge()))
                 .collect(Collectors.toList());
 
-        for (Object person :  teamSortedByAge) {
+        for (Object person : teamSortedByAge) {
             System.out.println(person.toString());
         }
 
@@ -207,11 +208,30 @@ int[] example2 = list.stream().mapToInt(Integer::intValue).toArray();
                 .sorted(Comparator.comparing(Person::getAge))
                 .collect(Collectors.toList());
 
-        for (Object person :  teamSortedByAgeV2) {
+        for (Object person : teamSortedByAgeV2) {
             System.out.println(person.toString());
         }
 
 
+        // flatMap() example:
+
+        List<List<Integer>> number = new ArrayList<>();
+
+// adding the elements to number arraylist
+        number.add(Arrays.asList(1, 2));
+        number.add(Arrays.asList(3, 4));
+        number.add(Arrays.asList(5, 6));
+        number.add(Arrays.asList(7, 8));
+
+        System.out.println("List of list-" + number);
+
+        // using flatmap() to flatten this list
+        List<Integer> flatList = number.stream()
+                .flatMap(list -> list.stream())
+                .collect(Collectors.toList());
+
+// printing the list
+        System.out.println("List generate by flatMap-" + flatList);
     }
 
 
@@ -263,5 +283,4 @@ int[] example2 = list.stream().mapToInt(Integer::intValue).toArray();
         CLEANING_LADY,
         DEVELOPER
     }
-
 }
