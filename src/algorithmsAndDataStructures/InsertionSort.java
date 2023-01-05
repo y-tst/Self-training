@@ -13,29 +13,33 @@ public class InsertionSort {
             numbers[i] = random.nextInt(100);
         }
 
-        System.out.println("Before: ");
+        System.out.print("Before: ");
         printArray(numbers);
 
         sortNumbers(numbers);
 
-        System.out.println("After: ");
+        System.out.print("\nAfter: ");
         printArray(numbers);
     }
 
     public static void sortNumbers(int[] sourceNumbers) {
-        int temp = sourceNumbers[0];
+
         for (int i = 1; i < sourceNumbers.length; i++) {
-            while (sourceNumbers[i] < sourceNumbers[i - 1]) {
-                temp = sourceNumbers[i - 1];
-                sourceNumbers[i] = sourceNumbers[i - 1];
-                sourceNumbers[i] = temp;
+
+            int currentValue = sourceNumbers[i];
+            int j = i - 1;
+
+            while (j >= 0 && sourceNumbers[j] >= currentValue) {
+                sourceNumbers[j + 1] = sourceNumbers[j];
+                j--;
             }
+            sourceNumbers[j + 1] = currentValue;
         }
     }
 
     public static void printArray(int[] sourceArray) {
         for (int i = 0; i < sourceArray.length; i++) {
-            System.out.println(sourceArray[i] + " ");
+            System.out.print(sourceArray[i] + " ");
         }
     }
 }
