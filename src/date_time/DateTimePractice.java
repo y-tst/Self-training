@@ -18,8 +18,14 @@ public class DateTimePractice {
         LocalDateTime localDateTime = LocalDateTime.of(2020, 6, 25, 19, 47);
         LocalDateTime newLocalDateTime = localDateTime.plusMonths(3L);
 
-        System.out.println(newLocalDateTime.toLocalDate());
-        System.out.println(newLocalDateTime.toLocalTime());
+        System.out.println(newLocalDateTime.toLocalDate());    // outputs Date only
+        System.out.println(newLocalDateTime.toLocalTime());    // outputs Time only
+
+        LocalDateTime localDateTime1 = LocalDateTime.of(2022, 01, 25, 15, 45);
+        LocalDateTime newLocalDateTime1 = localDateTime1.minusDays(5L);
+
+        System.out.println(newLocalDateTime1.toLocalDate());
+        System.out.println(newLocalDateTime1.toLocalTime());
 
 
         /*
@@ -30,9 +36,12 @@ public class DateTimePractice {
         System.out.println("Task #2");
         LocalDateTime now = LocalDateTime.now();
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
-        String format = now.format(formatter);
-        System.out.println(format);
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        DateTimeFormatter formatter21 = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+        String format2 = now.format(formatter2);
+        System.out.println(format2);
+        String format21 = now.format(formatter21);
+        System.out.println(format21);
 
 
         /*
@@ -57,7 +66,7 @@ public class DateTimePractice {
         LocalDateTime localDateTime4 = LocalDateTime.parse(formattedDate4, formatter4);
         System.out.println(localDateTime4);
 
-        Instant instant = localDateTime.toInstant(ZoneId.of("America/Chicago").getRules().getOffset(localDateTime));
+        Instant instant = localDateTime4.toInstant(ZoneId.of("America/Chicago").getRules().getOffset(localDateTime));
         System.out.println(instant);
         System.out.println(instant.toEpochMilli());
 
@@ -100,10 +109,10 @@ public class DateTimePractice {
          */
         System.out.println("Task #7");
         Instant instant7 = Instant.now();
-        System.out.println(instant);
+        System.out.println(instant7);
 
-        ZonedDateTime zonedDateTime = instant7.atZone(ZoneId.of("Africa/Cairo"));
-        System.out.println(zonedDateTime);
+        ZonedDateTime zonedDateTime7 = instant7.atZone(ZoneId.of("Africa/Cairo"));
+        System.out.println(zonedDateTime7);
 
         /*
          8. Написать свою реализацию интерфейса TemporalAdjuster, которая бы
@@ -111,6 +120,7 @@ public class DateTimePractice {
          */
         System.out.println("Task #8");
         LocalDateTime now8 = LocalDateTime.now();
+        System.out.println(now8);
 
         LocalDateTime localDateTime8 = now8.with(temporal -> temporal.plus(42L, ChronoUnit.DAYS));
         System.out.println(localDateTime8);
