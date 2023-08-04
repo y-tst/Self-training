@@ -191,6 +191,7 @@ int[] example2 = list.stream().mapToInt(Integer::intValue).toArray();
                 .filter(person -> !person.occupation.equals(Occupation.CEO))
                 .collect(Collectors.groupingBy(Person::getOccupation));
 
+
         System.out.println(positions);
 
 

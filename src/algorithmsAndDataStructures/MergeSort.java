@@ -10,7 +10,8 @@ public class MergeSort {
         int[] numbers = new int[10];
 
         for (int i = 0; i < 10; i++) {
-            numbers[i] = rand.nextInt(100);
+            numbers[i] = rand.nextInt(100
+            );
         }
 
         System.out.println("Before: ");
