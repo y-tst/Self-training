@@ -15,6 +15,10 @@ public class Test {
         Animal cat = Animal.CAT;
         System.out.println(cat.ordinal()); // - returns index of element in enum
 
+        Animal[] animals = Animal.values();
+        for (Animal a:animals) {
+            System.out.println(a);
+        }
 
     }
 }
