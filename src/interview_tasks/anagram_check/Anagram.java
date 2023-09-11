@@ -1,5 +1,7 @@
 package interview_tasks.anagram_check;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,7 +32,7 @@ public class Anagram {
 
     }
 
-    public static boolean checkIfElementsAreAnagrams(String[] testArrayOfStrings) {
+    public static boolean checkIfElementsAreAnagrams(String @NotNull [] testArrayOfStrings) {
 
         for (int i = 0; i < testArrayOfStrings.length - 1; i++) {
             if (testArrayOfStrings[i].length() != testArrayOfStrings[i + 1].length())
