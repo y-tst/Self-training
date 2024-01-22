@@ -1,8 +1,12 @@
 package algorithmsAndDataStructures;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class InsertionSort {
+    private static final Logger LOGGER = Logger.getLogger(String.valueOf(InsertionSort.class));
 
     public static void main(String[] args) {
 
@@ -38,8 +42,9 @@ public class InsertionSort {
     }
 
     public static void printArray(int[] sourceArray) {
-        for (int i = 0; i < sourceArray.length; i++) {
-            System.out.print(sourceArray[i] + " ");
+
+        for (int j : sourceArray) {
+            LOGGER.log(Level.INFO, String.valueOf(j), " ");
         }
     }
 }

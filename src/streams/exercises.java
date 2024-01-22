@@ -1,8 +1,5 @@
 package streams;
 
-import javafx.collections.transformation.SortedList;
-
-
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
